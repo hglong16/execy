@@ -1,7 +1,7 @@
 import time
 import asyncio
 import pytest
-from exectime.exec import exec_time
+from execy.exec import exec_time
 
 
 @exec_time
