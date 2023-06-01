@@ -1,29 +1,49 @@
-# Project Name
+# Execy
 
-Short project description
+The ececy exec_time decorator is a utility that measures the execution time of a function. It can be used to easily track and log the time taken by a function to execute, both for synchronous and asynchronous functions.
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-Provide an introduction to your project here. Explain what it does and why it's useful.
-
-## Features
-
-List the main features and functionalities of your project.
+- [Execy](#execy)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
 
 ## Installation
 
-Provide instructions on how to install and set up your project. Include any dependencies and installation steps required.
+```bash
+pip install execy
+```
 
 ## Usage
 
-Provide examples and explanations on how to use your project. Include code snippets or detailed instructions to help users get started.
+To use the exec_time decorator, follow these steps:
+```python
+from execy import exec_time
+import asyncio
+import time
 
+@exec_time
+def sync_function():
+    # Simulate a time-consuming synchronous task
+    time.sleep(2)
+
+@exec_time
+async def async_function():
+    # Simulate a time-consuming asynchronous task
+    await asyncio.sleep(2)
+
+# Call the decorated synchronous function
+sync_function()
+
+# Call the decorated asynchronous function
+asyncio.run(async_function())
+```
+
+The result will be
+
+```bash
+Function 'sync_function' executed in 2.0001089572906494 seconds.
+Function 'async_function' executed in 2.001432180404663 seconds.
+
+```
