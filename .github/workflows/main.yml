@@ -1,0 +1,29 @@
+name: Python Rye Workflow
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  rye-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Rye
+      uses: sbarrios93/rye-rust-action@v1
+      id: rye-installer
+
+    - name: Show Rye version
+      run: |
+        echo "Installed Rye commit hash: ${{ steps.rye-installer.outputs.rye_commit_hash }}"
+        rye --version
+
+    - name: Sync dependencies
+      run: |
+        rye sync
