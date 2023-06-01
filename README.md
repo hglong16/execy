@@ -1,5 +1,5 @@
 # Execy
-[![Upload Python Package](https://github.com/hglong16/execy/actions/workflows/python-publish.yml/badge.svg?branch=master)](https://github.com/hglong16/execy/actions/workflows/python-publish.yml)
+[![Upload Python Package](https://github.com/hglong16/execy/actions/workflows/python-publishing.yml/badge.svg)](https://github.com/hglong16/execy/actions/workflows/python-publishing.yml)
 
 The execy `@exec_time` decorator is a utility that measures the execution time of a function. It can be used to easily track and log the time taken by a function to execute, both for synchronous and asynchronous functions.
 
