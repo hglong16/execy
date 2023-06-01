@@ -26,3 +26,7 @@ jobs:
       - name: Linting
         run: |
           rye run lint
+
+      - name: Testing
+        run: |
+          rye run pytest
